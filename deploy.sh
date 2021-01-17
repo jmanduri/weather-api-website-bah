@@ -15,7 +15,7 @@ DEVELOPMENT_ALIAS_VERSION=$(cat output.json | jq -r '.FunctionVersion')
 # UPDATE FUNCTION CODE
 aws lambda update-function-code \
   --function-name $DEPLOY_FUNCTION_NAME \
-  --zip-file fileb://function.zip \
+  --zip-file fileb://weather-api-bah.zip \
   --publish \
   > output.json
 LATEST_VERSION=$(cat output.json | jq -r '.Version')

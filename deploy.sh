@@ -40,11 +40,3 @@ EOM
 aws s3 cp \
     $DEPLOY_APPSPEC_FILE \
     s3://$DEPLOY_BUCKET_NAME/$DEPLOY_APPSPEC_FILE
-
-# CREATE DEPLOYMENT
-REVISION=revisionType=S3,s3Location={bucket=$DEPLOY_BUCKET_NAME,key=$DEPLOY_APPSPEC_FILE,bundleType=YAML}
-aws deploy create-deployment \
-  --application-name $DEPLOY_APPLICATION_NAME \
-  --deployment-group-name $DEPLOY_DEPLOYMENT_GROUP_NAME \
-  --deployment-config-name CodeDeployDefault.LambdaAllAtOnce \
-  --revision $REVISION

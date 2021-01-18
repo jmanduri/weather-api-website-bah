@@ -5,6 +5,7 @@ DEPLOY_ALIAS_NAME="weather-api-bahAlias"
 DEPLOY_APPSPEC_FILE="appspec.yaml"
 DEPLOY_BUCKET_NAME="artifact-bucket-bah/bah-codebuild-lambda/CodeDeploy"
 
+
 # DEVELOPMENT ALIAS VERSION
 aws lambda get-alias \
   --function-name $DEPLOY_FUNCTION_NAME \
